@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Grade Management</title>
+    <link rel="stylesheet" href="Grade Sheet.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Student Grade Management System</h1>
+
+        <form id="studentForm">
+            <input type="text" id="name" placeholder="Student Name" required>
+            <input type="text" id="id" placeholder="Student ID" required>
+            <input type="number" id="math" placeholder="Higher Math Marks" min="0" max="100" >
+            <input type="number" id="bangla" placeholder="Bangla Marks" min="0" max="100" >
+            <input type="number" id="english" placeholder="English Marks" min="0" max="100" >
+            <input type="number" id="science" placeholder="Physics Marks" min="0" max="100" >
+            <input type="number" id="chemistry" placeholder="Chemistry Marks" min="0" max="100" >
+            <input type="number" id="biology" placeholder="Biology Marks" min="0" max="100" >
+            <button type="submit">Add Student</button>
+        </form>
+
+        <h2>Student List</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>ID</th>
+                    <th>Math</th>
+                    <th>Bangla</th>
+                    <th>English</th>
+                    <th>Physics</th>
+                    <th>Chemistry</th>
+                    <th>Biology</th>
+                    <th>Average</th>
+                    <th>Grade</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="studentTable"></tbody>
+        </table>
+
+        <h2>Marks Chart</h2>
+        <canvas id="marksChart"></canvas>
+    </div>
+
+    <script src="Grade Sheet.js"></script>
+</body>
+</html>

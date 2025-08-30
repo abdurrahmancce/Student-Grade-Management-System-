@@ -4,7 +4,6 @@ const marksChartCanvas = document.getElementById("marksChart");
 
 let students = JSON.parse(localStorage.getItem("students")) || [];
 
-// Grade calculation
 function calculateGrade(avg) {
     if(avg >= 90) return 'A';
     else if(avg >= 80) return 'B';
@@ -13,25 +12,22 @@ function calculateGrade(avg) {
     else return 'F';
 }
 
-// Determine color based on mark (extended)
 function getColor(mark) {
-    if(mark >= 90) return 'rgba(24, 205, 24, 0.7)';       // Dark Green → Excellent
-    else if(mark >= 80) return 'rgba(0, 242, 242, 0.7)'; // Teal → Very Good
-    else if(mark >= 70) return 'rgba(5, 136, 136, 0.7)'; // Light Teal → Good
-    else if(mark >= 60) return 'rgba(182, 7, 83, 0.7)'; // Golden → Average
-    else if(mark >= 50) return 'rgba(1, 41, 239, 0.7)'; // Yellow → Below Average
-    else if(mark >= 40) return 'rgba(200, 101, 1, 0.7)'; // Orange → Poor
-    else return 'rgba(228, 5, 194, 0.7)';               // Red → Fail
+    if(mark >= 90) return 'rgba(24, 205, 24, 0.7)';       
+    else if(mark >= 80) return 'rgba(0, 242, 242, 0.7)'; 
+    else if(mark >= 70) return 'rgba(5, 136, 136, 0.7)'; 
+    else if(mark >= 60) return 'rgba(182, 7, 83, 0.7)'; 
+    else if(mark >= 50) return 'rgba(1, 41, 239, 0.7)'; 
+    else if(mark >= 40) return 'rgba(200, 101, 1, 0.7)';
+    else return 'rgba(228, 5, 194, 0.7)';        
 }
 
-// Determine row color based on grade
 function getRowColor(grade) {
     if(grade === 'A' || grade === 'B') return 'lightgreen';
     else if(grade === 'C' || grade === 'D') return 'lightyellow';
     else return 'lightcoral';
 }
 
-// Display students
 function displayStudents() {
     studentTable.innerHTML = "";
     students.forEach((student, index) => {
@@ -61,7 +57,7 @@ function displayStudents() {
     updateChart();
 }
 
-// Add student
+
 studentForm.addEventListener("submit", function(e){
     e.preventDefault();
     const student = {
@@ -80,14 +76,12 @@ studentForm.addEventListener("submit", function(e){
     displayStudents();
 });
 
-// Delete student
 function deleteStudent(index) {
     students.splice(index, 1);
     localStorage.setItem("students", JSON.stringify(students));
     displayStudents();
 }
 
-// Chart.js integration with interactive tooltips
 let marksChart;
 function updateChart() {
     const labels = students.map(s => s.name);
@@ -126,5 +120,5 @@ function updateChart() {
     marksChart = new Chart(marksChartCanvas, config);
 }
 
-// Initial display
 displayStudents();
+

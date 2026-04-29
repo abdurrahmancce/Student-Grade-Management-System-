@@ -7,7 +7,7 @@ This project helps manage student records, calculate grades, and display academi
 
 ## 🌐 Live Website
 
-🔗 [Open Live Demo](https://github.com/topics/student-result-management-system?utm_source=chatgpt.com)
+🔗 https://abdurrahmancce.github.io/Student-Grade-Management-System-/
 
 ---
 
